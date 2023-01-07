@@ -10,15 +10,15 @@ const showSchema = new mongoose.Schema({
         type: String
     },
     afbeelding: {
-        required: false,
+        required: true,
         type: String
     },
     description: {
-        required: false,
+        required: true,
         type: String
     },
     type: {
-        required: false,
+        required: true,
         type: String
     },
     genre: {
@@ -26,7 +26,7 @@ const showSchema = new mongoose.Schema({
         type: Array
     },
     uitgelicht: {
-        required: false,
+        required: true,
         type: Boolean
     },
     blok: {
