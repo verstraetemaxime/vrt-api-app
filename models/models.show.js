@@ -30,7 +30,7 @@ const showSchema = new mongoose.Schema({
         type: Boolean
     },
     blok: {
-        required: false,
+        required: true,
         type: Number
     }
 })
