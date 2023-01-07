@@ -3,7 +3,7 @@ const router = express.Router();
 const Blok = require('../models/models.blok');
 
 //Post Method
-router.post('/post', async (req, res) => {
+router.post('/blokken', async (req, res) => {
     const data = new Blok({
         id: req.body.id,
         order: req.body.order,
@@ -32,7 +32,7 @@ router.get('/blokken', async (req, res) => {
 })
 
 //Get by ID Method
-router.get('/getOne/:id', async (req, res) => {
+router.get('/blokken/:id', async (req, res) => {
     try {
         const data = await Blok.findById(req.params.id);
         res.json(data);
@@ -58,7 +58,7 @@ router.patch('/update/:id', async (req, res) => {
 })
 
 //Delete by ID Method
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/blokken/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Blok.findByIdAndDelete(id);
