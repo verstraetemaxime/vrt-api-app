@@ -3,8 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const mongoString = process.env.MONGO_URI;
-const routes = require('./routes/routes.blokken');
-const routes = require('./routes/routes.shows');
+const blokRouter = require('./routes/routes.blokken');
+const showRouter = require('./routes/routes.show');
 let port = process.env.PORT || 3000;
 
 mongoose.connect(mongoString);
@@ -26,7 +26,8 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use('/api', routes);
+app.use('/api', blokRouter);
+app.use('/api', showRouter);
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
