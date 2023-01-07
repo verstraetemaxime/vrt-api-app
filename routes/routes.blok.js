@@ -21,7 +21,7 @@ router.post('/post', async (req, res) => {
 })
 
 //Get all Method
-router.get('/getAll', async (req, res) => {
+router.get('/blokken', async (req, res) => {
     try {
         const data = await Model.find();
         res.json(data);
