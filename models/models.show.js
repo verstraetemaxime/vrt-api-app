@@ -22,7 +22,7 @@ const showSchema = new mongoose.Schema({
         type: String
     },
     genre: {
-        required: true,
+        required: false,
         type: Array
     },
     uitgelicht: {
