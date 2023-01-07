@@ -21,10 +21,6 @@ const showSchema = new mongoose.Schema({
         required: true,
         type: String
     },
-    genre: {
-        required: false,
-        type: Array
-    },
     uitgelicht: {
         required: true,
         type: Boolean
