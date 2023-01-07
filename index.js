@@ -24,12 +24,13 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-});
 app.use(cors());
 app.use('/api', blokRouter);
 app.use('/api', showRouter);
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+});
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
