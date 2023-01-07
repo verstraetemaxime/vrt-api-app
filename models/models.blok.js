@@ -19,5 +19,5 @@ const blokSchema = new mongoose.Schema({
     }
 })
 
-const Blok = mongoose.model('test', blokSchema);
+const Blok = mongoose.model('Blokken', blokSchema);
 module.exports = Blok;
