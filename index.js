@@ -24,6 +24,15 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(('/api', blokRouter, next), () => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+app.use(('/api', showRouter, next), () => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.get('/', (req, res) => {
     // res.send('Hello World!')
     request(
@@ -38,14 +47,7 @@ app.get('/', (req, res) => {
     )
 })
 
-app.use(('/api', blokRouter, next), () => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
-app.use(('/api', showRouter, next), () => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
+
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
