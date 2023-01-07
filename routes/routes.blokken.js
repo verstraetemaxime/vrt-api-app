@@ -5,7 +5,6 @@ const Blok = require('../models/models.blok');
 //Post Method
 router.post('/blokken', async (req, res) => {
     const data = new Blok({
-        id: req.body.id,
         order: req.body.order,
         title: req.body.title,
         visible: req.body.visible

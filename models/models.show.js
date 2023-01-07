@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const showSchema = new mongoose.Schema({
-    id: {
-        required: true,
-        type: Number
-    },
     title: {
         required: true,
         type: String
