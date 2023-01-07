@@ -24,19 +24,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(('/api', blokRouter, next), () => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
-app.use(('/api', showRouter, next), () => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
-
 app.get('/', (req, res) => {
     // res.send('Hello World!')
     request(
-        { url: 'https://vrt-api-app.herokuapp.com/' },
+        { url: 'https://vrt-api-app.herokuapp.com' },
         (error, response, body) => {
           if (error || response.statusCode !== 200) {
             return res.status(500).json({ type: 'error', message: err.message });
@@ -47,7 +38,14 @@ app.get('/', (req, res) => {
     )
 })
 
-
+app.use(('/api', blokRouter, next), () => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+app.use(('/api', showRouter, next), () => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 
 app.listen(port, () => {
     console.log(`Server started at ${port}`);
