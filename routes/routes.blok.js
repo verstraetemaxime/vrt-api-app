@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/models.blok');
+const Blok = require('../models/models.blok');
 
 //Post Method
 router.post('/post', async (req, res) => {
-    const data = new Model({
+    const data = new Blok({
         id: req.body.id,
         order: req.body.order,
         title: req.body.title,
@@ -23,7 +23,7 @@ router.post('/post', async (req, res) => {
 //Get all Method
 router.get('/blokken', async (req, res) => {
     try {
-        const data = await Model.find();
+        const data = await Blok.find();
         res.json(data);
     }
     catch(error) {
@@ -34,7 +34,7 @@ router.get('/blokken', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try {
-        const data = await Model.findById(req.params.id);
+        const data = await Blok.findById(req.params.id);
         res.json(data);
     }
     catch(error) {
@@ -49,7 +49,7 @@ router.patch('/update/:id', async (req, res) => {
         const updatedData = req.body;
         const options = {new: true};
 
-        const result = await Model.findByIdAndUpdate(id, updatedData, options);
+        const result = await Blok.findByIdAndUpdate(id, updatedData, options);
         res.send(result)
     }
     catch(error) {
@@ -61,7 +61,7 @@ router.patch('/update/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const data = await Model.findByIdAndDelete(id);
+        const data = await Blok.findByIdAndDelete(id);
         res.send(`Doc with ${data.name} has been deleted`);
     }
     catch(error) {
