@@ -6,9 +6,13 @@ const Show = require('../models/models.show');
 router.post('/shows', async (req, res) => {
     const data = new Show({
         id: req.body.id,
-        order: req.body.order,
         title: req.body.title,
-        visible: req.body.visible
+        afbeelding: req.body.afbeelding,
+        description: req.body.description,
+        type: req.body.type,
+        genre: req.body.genre,
+        uitgelicht: req.body.uitgelicht,
+        blok: req.body.blok
     });
     
     try {
