@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const mongoString = process.env.MONGO_URI;
 const blokRouter = require('./routes/routes.blokken');
@@ -19,7 +20,7 @@ db.once('connected', () => {
 });
 
 const app = express();
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
