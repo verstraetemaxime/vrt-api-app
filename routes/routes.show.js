@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const qs = require('qs');
 const Show = require('../models/models.show');
 
 //Post Method
@@ -32,7 +31,7 @@ router.get('/shows', async (req, res) => {
         // res.json(data);
         // console.log(req.query.uitgelicht);
         const uitgelicht = req.query.uitgelicht
-        res.send('uitgelicht: ' + req.query.uitgelicht);
+        res.send(req.query.uitgelicht);
     }
     catch(error) {
         res.status(500).json({message: error.message});
