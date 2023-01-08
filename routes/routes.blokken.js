@@ -33,7 +33,7 @@ router.get('/blokken', async (req, res) => {
 //Get by ID Method
 router.get('/blokken/:id', async (req, res) => {
     try {
-        const data = await Blok.findById(req.params.id);
+        const data = await Blok.findById(req.params._id);
         res.json(data);
     }
     catch(error) {
