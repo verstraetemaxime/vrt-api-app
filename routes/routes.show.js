@@ -25,20 +25,20 @@ router.post('/shows', async (req, res) => {
 })
 
 //Get all Method
-router.get('/shows', async (req, res) => {
-    try {
-        // const data = await Show.find();
-        // res.json(data);
-        // res.json(req.query);
-        res.send("test");
-        // console.log(req.query.uitgelicht);
-        // const uitgelicht = req.query.uitgelicht
-        // res.send(req.query.uitgelicht);
-    }
-    catch(error) {
-        res.status(500).json({message: error.message});
-    }
-})
+// router.get('/shows', async (req, res) => {
+//     try {
+//         // const data = await Show.find();
+//         // res.json(data);
+//         // res.json(req.query);
+//         res.send("test");
+//         // console.log(req.query.uitgelicht);
+//         // const uitgelicht = req.query.uitgelicht
+//         // res.send(req.query.uitgelicht);
+//     }
+//     catch(error) {
+//         res.status(500).json({message: error.message});
+//     }
+// })
 
 //Get by ID Method
 router.get('/shows/:id', async (req, res) => {
