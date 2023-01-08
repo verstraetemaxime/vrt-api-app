@@ -29,7 +29,8 @@ router.get('/shows', async (req, res) => {
     try {
         // const data = await Show.find();
         // res.json(data);
-        res.json(req.query);
+        // res.json(req.query);
+        res.send("test");
         // console.log(req.query.uitgelicht);
         // const uitgelicht = req.query.uitgelicht
         // res.send(req.query.uitgelicht);
