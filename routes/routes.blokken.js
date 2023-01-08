@@ -44,7 +44,7 @@ router.get('/blokken/:id', async (req, res) => {
 //Update by ID Method
 router.patch('/update/:id', async (req, res) => {
     try {
-        const id = req.params._id;
+        const id = req.params.id;
         const updatedData = req.body;
         const options = {new: true};
 
