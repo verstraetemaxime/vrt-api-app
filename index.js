@@ -4,7 +4,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const qs = require('qs');
 const mongoString = process.env.MONGO_URI;
 const blokRouter = require('./routes/routes.blokken');
 const showRouter = require('./routes/routes.show');
@@ -26,7 +25,6 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-app.settings('query parser', () => qs.parse(str));
 app.use('/api', blokRouter);
 app.use('/api', showRouter);
 

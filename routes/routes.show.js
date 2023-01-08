@@ -29,9 +29,10 @@ router.get('/shows', async (req, res) => {
     try {
         // const data = await Show.find();
         // res.json(data);
+        res.json(req.query);
         // console.log(req.query.uitgelicht);
-        const uitgelicht = req.query.uitgelicht
-        res.send(req.query.uitgelicht);
+        // const uitgelicht = req.query.uitgelicht
+        // res.send(req.query.uitgelicht);
     }
     catch(error) {
         res.status(500).json({message: error.message});
