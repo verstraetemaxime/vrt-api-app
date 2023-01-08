@@ -27,10 +27,9 @@ router.post('/shows', async (req, res) => {
 //Get all Method
 router.get('/shows', async (req, res) => {
     try {
-        req.query.uitgelicht;
         const data = await Show.find();
         // res.json(data);
-        res.send(req.query)
+        res.send(req.query.uitgelicht)
     }
     catch(error) {
         res.status(500).json({message: error.message});
