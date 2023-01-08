@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const qs = require('qs');
 const Show = require('../models/models.show');
 
 //Post Method
@@ -27,9 +28,11 @@ router.post('/shows', async (req, res) => {
 //Get all Method
 router.get('/shows', async (req, res) => {
     try {
-        const data = await Show.find();
+        req.query.uitgelicht === true;
+        // const data = await Show.find();
         // res.json(data);
-        res.send(req.query.uitgelicht)
+        // console.log(req.query.uitgelicht);
+        res.send(req.query)
     }
     catch(error) {
         res.status(500).json({message: error.message});
