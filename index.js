@@ -25,8 +25,8 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
-app.use('/blokken', blokRouter);
-app.use('/shows', showRouter);
+app.use('/api', blokRouter);
+app.use('/api', showRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
