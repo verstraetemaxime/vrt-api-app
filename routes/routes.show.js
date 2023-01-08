@@ -27,8 +27,8 @@ router.post('/shows', async (req, res) => {
 //Get all Method
 router.get('/shows', async (req, res) => {
     try {
-        let uitgelicht = req.query.uitgelicht;
-        const data = await Show.find({ tag: uitgelicht }).exec();
+        req.query.uitgelicht = true;
+        const data = await Show.find();
         res.json(data);
     }
     catch(error) {
