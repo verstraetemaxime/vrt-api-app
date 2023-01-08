@@ -20,7 +20,7 @@ router.post('/blokken', async (req, res) => {
 })
 
 //Get all Method
-router.get('/blokken', async (req, res) => {
+router.get('/Alleblokken', async (req, res) => {
     try {
         const data = await Blok.find();
         res.json(data);
