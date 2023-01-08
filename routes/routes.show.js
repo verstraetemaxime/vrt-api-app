@@ -66,7 +66,7 @@ router.delete('/shows/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const data = await Show.findByIdAndDelete(id);
-        res.send(`Doc with ${data.name} has been deleted`);
+        res.json(data);
     }
     catch(error) {
         res.status(400).json({message: error.message})
