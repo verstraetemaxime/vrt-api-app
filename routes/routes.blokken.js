@@ -33,7 +33,7 @@ router.get('/blokken', async (req, res) => {
 //Get by ID Method
 router.get('/blokken/:id', async (req, res) => {
     try {
-        const data = await Blok.findById(req.params._id);
+        const data = await Blok.findById(req.params.id);
         res.json(data);
     }
     catch(error) {
@@ -44,7 +44,7 @@ router.get('/blokken/:id', async (req, res) => {
 //Update by ID Method
 router.patch('/update/:id', async (req, res) => {
     try {
-        const id = req.params.id;
+        const id = req.params._id;
         const updatedData = req.body;
         const options = {new: true};
 
