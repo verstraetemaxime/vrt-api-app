@@ -32,7 +32,7 @@ router.get('/shows', async (req, res) => {
         // res.json(data);
         // console.log(req.query.uitgelicht);
         const uitgelicht = req.query.uitgelicht
-        res.send(uitgelicht);
+        res.send('uitgelicht: ' + req.query.uitgelicht);
     }
     catch(error) {
         res.status(500).json({message: error.message});
