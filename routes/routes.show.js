@@ -28,7 +28,7 @@ router.post('/shows', async (req, res) => {
 router.get('/shows', async (req, res) => {
     try {
         if(req.query.uitgelicht) {
-            const data = await Show.find({uitgelicht: uitgelicht});
+            const data = await Show.find({uitgelicht: req.query.uitgelicht});
             res.json(data);
         } else {
             const data = await Show.find();
