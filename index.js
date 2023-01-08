@@ -28,7 +28,7 @@ app.use(cors());
 app.use('/blokken', blokRouter);
 app.use('/shows', showRouter);
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello World!')
 });
 
