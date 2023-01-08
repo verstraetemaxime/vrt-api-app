@@ -26,7 +26,7 @@ const showSchema = new mongoose.Schema({
         type: Boolean
     },
     blok: {
-        required: true,
+        required: false,
         type: Number
     }
 })
