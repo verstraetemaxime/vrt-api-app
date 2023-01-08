@@ -24,7 +24,7 @@ const app = express();
 
 app.use(express.json());
 
-// app.use(cors());
+app.use(cors());
 app.use('/api', blokRouter);
 app.use('/api', showRouter);
 
