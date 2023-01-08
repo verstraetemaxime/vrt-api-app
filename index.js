@@ -24,17 +24,14 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
-
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
-
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'DELETE', 'PATCH']
+}));
 app.use('/api', blokRouter);
 app.use('/api', showRouter);
 
-app.get('/', (req, res) => {
+app.get('/', cors(), (req, res) => {
     res.send('Hello World!')
 });
 
