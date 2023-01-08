@@ -29,10 +29,7 @@ router.get('/shows', async (req, res) => {
     try {
         // const data = await Show.find();
         // res.json(data);
-        res.json({
-            url: req.url,
-            query: req.query
-        })
+        res.json(req.query);
     }
     catch(error) {
         res.status(500).json({message: error.message});
