@@ -62,7 +62,6 @@ router.delete('/blokken/:id', async (req, res) => {
         const id = req.params.id;
         const data = await Blok.findByIdAndDelete(id);
         res.json(data);
-        // res.send(`Doc with ${data.title} has been deleted`);
     }
     catch(error) {
         res.status(400).json({message: error.message})
