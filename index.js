@@ -24,14 +24,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'DELETE', 'PATCH']
-}));
-app.use('/api', blokRouter);
-app.use('/api', showRouter);
+app.use(cors());
+app.use('/blokken', blokRouter);
+app.use('/shows', showRouter);
 
-app.get('/', cors(), (req, res) => {
+app.get('/api', (req, res) => {
     res.send('Hello World!')
 });
 
