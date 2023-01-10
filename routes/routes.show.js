@@ -35,7 +35,7 @@ router.get('/shows', async (req, res) => {
         //     res.json(data);
         // }
 
-        const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok}).setOptions({sanitizeFilter: true});
+        const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok});
         res.json(data);
         // res.json(req.query.uitgelicht);
     }
