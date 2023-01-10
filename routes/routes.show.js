@@ -36,7 +36,7 @@ router.get('/shows', async (req, res) => {
         // }
 
         const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok}).setOptions({sanitizeFilter: true});
-        
+        res.json(data);
         // res.json(req.query.uitgelicht);
     }
     catch(error) {
