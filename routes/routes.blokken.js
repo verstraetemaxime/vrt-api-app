@@ -12,9 +12,9 @@ router.post('/blokken', async (req, res) => {
     
     try {
         const dataToSave = await data.save();
-        res.json(dataToSave);
         const allData = await Blok.find();
-        res.json(allData);
+        res.json(dataToSave).then(allData);
+        // res.json(allData);
     }
     catch(error) {
         res.status(400).json({message: error.message})
