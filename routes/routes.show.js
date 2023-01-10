@@ -27,30 +27,17 @@ router.post('/shows', async (req, res) => {
 //Get all Method
 router.get('/shows', async (req, res) => {
     try {
-        if(req.query.uitgelicht) {
-            const data = await Show.find({uitgelicht: req.query.uitgelicht});
-            res.json(data);
-        } else {
-            const data = await Show.find();
-            res.json(data);
-        }
+        // if(req.query.uitgelicht) {
+        //     const data = await Show.find({uitgelicht: req.query.uitgelicht});
+        //     res.json(data);
+        // } else {
+        //     const data = await Show.find();
+        //     res.json(data);
+        // }
+
+        const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok}).setOptions({sanitizeFilter: true});
         
         // res.json(req.query.uitgelicht);
-    }
-    catch(error) {
-        res.status(500).json({message: error.message});
-    }
-})
-
-router.get('/shows', async (req, res) => {
-    try {
-        if(req.query.uitgelicht) {
-            const data = await Show.find({uitgelicht: req.query.uitgelicht});
-            res.json(data);
-        } else {
-            const data = await Show.find();
-            res.json(data);
-        }
     }
     catch(error) {
         res.status(500).json({message: error.message});
