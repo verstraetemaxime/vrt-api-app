@@ -35,7 +35,18 @@ router.get('/shows', async (req, res) => {
         //     res.json(data);
         // }
 
-        const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok});
+        const query = {}
+        if(req.query.uitgelicht) {
+            query.uitgelicht = req.query.uitgelicht;
+        }
+
+        if(req.query.blok) {
+            query.blok = req.query.blok;
+        }
+
+        const data = await Show.find(query);
+
+        // const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok});
         res.json(data);
         // res.json(req.query.uitgelicht);
     }
