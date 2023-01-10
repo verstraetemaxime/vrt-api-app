@@ -42,6 +42,16 @@ router.get('/shows', async (req, res) => {
     }
 })
 
+router.get('/shows', async (req, res) => {
+    try {
+        const data = await Show.find({blok: req.query.blok});
+        res.json(data);
+    }
+    catch(error) {
+        res.status(500).json({message: error.message});
+    }
+})
+
 //Get by ID Method
 router.get('/shows/:id', async (req, res) => {
     try {
