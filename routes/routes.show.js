@@ -27,14 +27,6 @@ router.post('/shows', async (req, res) => {
 //Get all Method
 router.get('/shows', async (req, res) => {
     try {
-        // if(req.query.uitgelicht) {
-        //     const data = await Show.find({uitgelicht: req.query.uitgelicht});
-        //     res.json(data);
-        // } else {
-        //     const data = await Show.find();
-        //     res.json(data);
-        // }
-
         const query = {}
         if(req.query.uitgelicht) {
             query.uitgelicht = req.query.uitgelicht;
@@ -45,10 +37,7 @@ router.get('/shows', async (req, res) => {
         }
 
         const data = await Show.find(query);
-
-        // const data = await Show.find({uitgelicht: req.query.uitgelicht, blok: req.query.blok});
         res.json(data);
-        // res.json(req.query.uitgelicht);
     }
     catch(error) {
         res.status(500).json({message: error.message});
