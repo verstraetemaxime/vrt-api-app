@@ -12,6 +12,10 @@ const blokSchema = new mongoose.Schema({
     visible: {
         required: true,
         type: Boolean
+    },
+    shows: {
+        required: false,
+        type: Array
     }
 })
 
