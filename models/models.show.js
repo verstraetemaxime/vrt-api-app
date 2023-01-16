@@ -27,7 +27,7 @@ const showSchema = new mongoose.Schema({
     },
     blok: {
         required: false,
-        type: String
+        type: Array
     }
 })
 
