@@ -5,6 +5,10 @@ const radioSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    shortTitle: {
+        required: true,
+        type: String,
+    },
     icon: {
         required: true,
         type: String

@@ -5,6 +5,7 @@ const Radio = require('../models/models.radio');
 router.post('/radiostations', async (req, res) => {
     const data = new Radio({
         title: req.body.title,
+        shortTitle: req.body.shortTitle,
         icon: req.body.icon,
         thumbnail: req.body.thumbnail,
         selected: req.body.selected
