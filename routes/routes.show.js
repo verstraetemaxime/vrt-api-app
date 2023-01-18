@@ -12,7 +12,6 @@ router.post('/shows', async (req, res) => {
         type: req.body.type,
         genre: req.body.genre,
         uitgelicht: req.body.uitgelicht,
-        blok: req.body.blok
     });
     
     try {

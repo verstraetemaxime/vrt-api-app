@@ -24,10 +24,6 @@ const showSchema = new mongoose.Schema({
     uitgelicht: {
         required: true,
         type: Boolean
-    },
-    blok: {
-        required: false,
-        type: Array
     }
 })
 
